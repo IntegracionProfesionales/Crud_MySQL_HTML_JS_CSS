@@ -9,7 +9,7 @@ npm install mysql express cors
 npm install nodemon -D
 
 ## Ejecutar proyecto de inicio
-node ./config/conexion.js
+node ./src/database/conexion.js
 
 # MySQL
 ## Solucionar problema de conección con el servidor de la conección de la base de datos de MySQL.
