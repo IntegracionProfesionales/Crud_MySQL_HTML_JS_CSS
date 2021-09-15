@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/IntegracionProfesionales/Crud_MySQL_HTML_JS_CSS#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "mysql": "github:mysqljs/mysql"
   }
 }
