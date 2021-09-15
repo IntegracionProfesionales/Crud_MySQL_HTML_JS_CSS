@@ -1,0 +1,5 @@
+npm init -y
+
+npm install mysql express cors
+
+node ./config/conexion.js
