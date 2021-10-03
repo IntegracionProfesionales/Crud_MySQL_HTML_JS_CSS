@@ -1,11 +1,10 @@
 CREATE SCHEMA `recursos` ;
 
 CREATE TABLE `recursos`.`flujo` (
-  `idflujo` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idflujo` INT NOT NULL AUTO_INCREMENT,
   `nombre_envia` VARCHAR(80) NOT NULL,
   `nombre_recibe` VARCHAR(80) NOT NULL,
   `tipo_recurso` VARCHAR(45) NOT NULL DEFAULT 'efectivo',
   `cantidad` INT NOT NULL,
   `FechaHora` DATETIME NOT NULL,
-  PRIMARY KEY (`idflujo`),
-  UNIQUE INDEX `idflujo_UNIQUE` (`idflujo` ASC) VISIBLE);
+  PRIMARY KEY (`idflujo`));
