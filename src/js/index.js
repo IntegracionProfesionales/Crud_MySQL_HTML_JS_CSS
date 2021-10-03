@@ -22,7 +22,8 @@ app.use(cors());
 // PENDIENTE: Mover todas las peticiones al archivo:
 // app.use(require('./routes/movimiento'));
 app.get('/productos', (req, res)=>{
-    let consulta_sql = "SELECT * FROM flujo";
+    const consulta_sql = 'SELECT * FROM flujo';
+    
     db.query(consulta_sql, (err, data)=>{
         if(err){
              return err;

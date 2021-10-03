@@ -1,20 +1,18 @@
-const mysql = require('mysql');
+var mysql = require("mysql");
 
-const mysql_connection = mysql.createConnection({
+var conexion = mysql.createConnection({
   host: "localhost",
   user: "root",
-  // password: '',         // Para Ramiro
-  password: 'root1234', // para Irma
+  password: "", // Para Ramiro
+  // password: 'root1234', // para Irma
   database: "recursos",
 });
 
-mysql_connection.connect((err) => {
+conexion.connect((err) => {
   if (err) {
     console.log("Error Connect: =( ", err);
     return err;
-  } else {
-    console.log("Connection SuccesFull! =D ");
-  }
+  } else console.log("Connection SuccesFull! =D ");
 });
 
-module.export = mysql_connection;
+module.exports = conexion;
