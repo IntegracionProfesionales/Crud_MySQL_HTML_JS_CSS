@@ -6,10 +6,12 @@
 * GitHub
 * VSCode
 * Vim :v
-* JavaScript
-* MySQL
+* Thunder Client
 * NodeJS
 * npm
+* Nodemon
 * Express
+* JavaScript
 * Cors
+* MySQL
 * Postman
