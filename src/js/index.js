@@ -27,6 +27,21 @@ app.get("/all", (req, res) => {
   });
 });
 
+app.get("/:id", (req, res) => {
+  console.log(req.params.id);
+  const values = req.params.id;
+  const consulta_sql = "SELECT * FROM flujo WHERE idflujo = ?;";
+  db.query(consulta_sql, values, (err, data) => {
+    if (err) {
+      console.log("petición fallida");
+      return err;
+    } else {
+      res.json(data);
+      console.log("petición exitosa");
+    }
+  });
+});
+
 app.post('', (req, res) => {
   const values = Object.values(req.body);
   console.log(values);
@@ -47,21 +62,6 @@ app.post('', (req, res) => {
         "esto es un mensaje": "inserción exitosa",
         result,
       });
-    }
-  });
-});
-
-app.get("/:id", (req, res) => {
-  console.log(req.params.id);
-  const values = req.params.id;
-  const consulta_sql = "SELECT * FROM flujo WHERE idflujo = ?;";
-  db.query(consulta_sql, values, (err, data) => {
-    if (err) {
-      console.log("petición fallida");
-      return err;
-    } else {
-      res.json(data);
-      console.log("petición exitosa");
     }
   });
 });
@@ -104,6 +104,7 @@ app.delete("/:id", (req, res) => {
     }
   });
 });
+
 app.listen(PORT, () => {
   console.log("Servidor on Port: " + PORT);
 });

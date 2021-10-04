@@ -3,8 +3,8 @@ var mysql = require("mysql");
 var conexion = mysql.createConnection({
   host: "localhost",
   user: "root",
-  // password: "", // Para Ramiro
-  password: 'root1234', // para Irma
+  password: "", // Para Ramiro
+  // password: 'root1234', // para Irma
   database: "recursos",
 });
 
