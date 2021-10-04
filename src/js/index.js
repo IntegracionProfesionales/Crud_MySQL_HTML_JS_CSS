@@ -27,7 +27,7 @@ app.get("/all", (req, res) => {
   });
 });
 
-app.post("/all", (req, res) => {
+app.post('', (req, res) => {
   const values = Object.values(req.body);
   console.log(values);
 
@@ -66,9 +66,8 @@ app.get("/:id", (req, res) => {
   });
 });
 
-app.put("/gatos", (req, res) => {
-  const values = Object.values(req.body);
-  // const values = Object.values(req.body).concat(parseInt(req.params.id));
+app.put("/:id", (req, res) => {
+  const values = Object.values(req.body).concat(parseInt(req.params.id));
   console.log(values);
 
   const consulta_sql =
@@ -91,6 +90,20 @@ app.put("/gatos", (req, res) => {
   });
 });
 
+app.delete("/:id", (req, res) => {
+  console.log(req.params.id);
+  const values = parseInt(req.params.id);
+  const consulta_sql = "DELETE FROM flujo WHERE idflujo = ?;";
+  db.query(consulta_sql, values, (err, data) => {
+    if (err) {
+      console.log("eliminación fallida");
+      return err;
+    } else {
+      res.json(data);
+      console.log("eliminación exitosa");
+    }
+  });
+});
 app.listen(PORT, () => {
   console.log("Servidor on Port: " + PORT);
 });
