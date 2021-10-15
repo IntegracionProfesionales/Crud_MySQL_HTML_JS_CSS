@@ -9,9 +9,9 @@ CREATE TABLE `recursos`.`flujo` (
   `FechaHora` DATETIME NOT NULL,
   PRIMARY KEY (`idflujo`));
   
-SELECT * FROM recursos.flujo;
+SELECT * FROM `recursos`.`flujo`;
 
-INSERT INTO recursos.flujo
-(idflujo, nombre_envia, nombre_recibe, tipo_recurso, cantidad, FechaHora)
+INSERT INTO `recursos`.`flujo`
+(`idflujo`, `nombre_envia`, `nombre_recibe`, `tipo_recurso`, `cantidad`, `FechaHora`)
 VALUES
 (2, "a2aa", "bbbbb", "cccc", 4, "2015-12-20 10:01:00");
